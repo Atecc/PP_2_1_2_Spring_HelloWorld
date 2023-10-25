@@ -7,6 +7,13 @@ public class App {
                 new AnnotationConfigApplicationContext(AppConfig.class);
         HelloWorld bean =
                 (HelloWorld) applicationContext.getBean("helloworld");
-        System.out.println(bean.getMessage());
+        HelloWorld bean1 =
+                (HelloWorld) applicationContext.getBean("helloworld");
+        Cat one = applicationContext.getBean(Cat.class);
+        Cat two = applicationContext.getBean(Cat.class);
+
+        System.out.println(bean==bean1);
+        System.out.println(one==two);
+
     }
 }
